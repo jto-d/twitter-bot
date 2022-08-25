@@ -1,11 +1,13 @@
 import tweepy
 import time
 
-consumer_key = 'JuxPwuW3tab69aFJCv3gAB1rQ'
-consumer_secret = '03rSbMxj0pbMTtvTecoyr11QVolJKWrN3sq6Xe8fVBL5jZTaDh'
+# api keys redacted
 
-key = '1344016095632617475-8Udr5Z05fIT6cqnnjfOdjmWgzByPIc'
-secret = 'dLOAZflwX5KAYYw0iBbWSJ365QWYcmm6BgpBXirvnGMcI'
+consumer_key = ''
+consumer_secret = ''
+
+key = ''
+secret = ''
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(key, secret)
@@ -14,6 +16,8 @@ api = tweepy.API(auth)
 word1 = 'lee chan'
 word2 = 'dino rt bot'
 tweetnumber = 10
+
+# store last_seen tweets in a file for testing
 """
 FILE_NAME = 'last_seen.txt'
 
@@ -29,6 +33,7 @@ def store_last_seen(FILE_NAME, last_seen_id):
     file_write_close()
     return
 """
+
 def search_bot(phrase):
     tweets = tweepy.Cursor(api.search, phrase).items(tweetnumber)
     for tweet in tweets:
